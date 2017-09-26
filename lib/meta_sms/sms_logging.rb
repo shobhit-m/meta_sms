@@ -6,9 +6,12 @@ module MetaSms
   class SmsLogging < ActiveRecord::Base
 
     def self.log_sms(result, options, error)
-      SmsLogging.create( SmsLogging.get_sms_logging_object(result, options, error) )
+      if ActiveRecord::Base.connection.table_exists? self.table_name
+        SmsLogging.create( SmsLogging.get_sms_logging_object(result, options, error) )
+      else
+        raise StandardError.new "No table exists. Please run 'rails g meta_sms:migrations_for_logger' and then run 'rake db:migrate'. To disable this warning, make config.logging=false, in config/initializers/meta_sms.rb."
+      end
     end
-
 
     def self.get_sms_logging_object(result, options, error)
       sms_logging_object = {

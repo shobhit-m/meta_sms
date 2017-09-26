@@ -54,8 +54,10 @@ module MetaSms
     rescue SecurityError => security_error
       error = security_error
     end
+    # This will raise an standard error if no table is present and logging is true.
     SmsLogging.log_sms(result, options, error) if Utility.logging?(options[:logging])
     raise error if error.present?
+    result
   end
 
 end
