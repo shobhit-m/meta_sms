@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.version     = MetaSms::VERSION
   s.authors     = ["Shobhit Dixit"]
   s.email       = ["shobhit.dixit@metacube.com"]
-  s.homepage    = "http://tpohub.com"
-  s.summary     = "Summary of MetaSms."
+  s.homepage    = "https://github.com/shobhit-m/meta_sms"
+  s.summary     = "MetaSms is a gem used to send sms via rails application."
   s.description = "Description of MetaSms."
   s.license     = "MIT"
 
@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'yard', '~>0.9.6'
   s.add_development_dependency 'rake', '~>12.0', '>=12.0.0' # Tasks manager
   s.add_development_dependency 'rubycritic'
-  
+
   s.add_development_dependency "pg"
 end
