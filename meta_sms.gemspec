@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails", '~> 3.5'
   s.add_development_dependency 'yard', '~>0.9.6'
   s.add_development_dependency 'rake', '~>12.0', '>=12.0.0' # Tasks manager
-  s.add_development_dependency 'rubycritic'
+  s.add_development_dependency 'rubycritic', '~> 3.2'
 
-  s.add_development_dependency "pg"
+  s.add_development_dependency "pg", '0.19.0'
 end
