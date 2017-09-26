@@ -1,3 +1,5 @@
+# MetaSms  
+
 ## Installation
 `gem 'meta_sms'`  
 or via github  
@@ -39,4 +41,12 @@ MetaSms.send_sms(options)
 ```
 `options[:message_text]` and `options[:mobile_number]` are the only required fields in the options hash.  
 `options[:logging]` is an optional field. In gem, to check whether to log sms in database or not, we use `options[:logging] == true or config.logging==true`.  
-`options[metadata]` is also optional field in which any data regarding sms process can be store as json format.
+`options[metadata]` is also optional field in which any data regarding sms process can be store as json format.  
+
+## Errors  
+`MetaSms.send_sms(options)` will raise errors as:  
+
+MetaSmsError => message: Your balance is low for sending message.  
+SecurityError => message: Authentication Failed. Please Try Again.  
+StandardError => message: No table exists. Please run 'rails g meta_sms:migrations_for_logger' and then run 'rake db:migrate'. To disable this warning, make config.logging=false, in config/initializers/meta_sms.rb.  
+
