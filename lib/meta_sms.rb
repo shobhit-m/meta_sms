@@ -43,6 +43,8 @@ module MetaSms
   # @note here message_text and mobile_number are required params and others are optional
   #
   # @raise MetaSmsError (for now, only-if balance is low)
+  # @raise SecurityError (for when service provider Authentication Failed)
+  # @raise StandardError (for when logging is true but no table for sms_loggings)
   # @return [Type] description of returned object
   # @author Shobhit Dixit
   def self.send_sms(options)
