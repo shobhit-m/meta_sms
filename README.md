@@ -1,3 +1,5 @@
+# MetaSms  
+
 ## Installation
 `gem 'meta_sms'`  
 or via github  
