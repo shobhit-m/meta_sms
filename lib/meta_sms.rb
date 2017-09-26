@@ -28,7 +28,9 @@ require 'meta_sms/utility'
 # raise error. MetaSms#send_sms will rescue the error, write the log and then throw the rescued error.
 # @note Here error from sms_logging is not handled.
 # => SmsLogging
-# This is an active record responsible to log data into database.
+# This is an active record responsible to log data into database. It will save the sms log into a sms_loggings table.
+# SmsLogging#log_sms is the method which does saving job. This method will raise StandardError if
+# config.logging or options[:logging] is true and you have not executed, 'rails g meta_sms:migrations_for_logger'.
 #
 #
 # @author Shobhit Dixit

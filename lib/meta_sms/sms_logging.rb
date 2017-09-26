@@ -5,6 +5,12 @@ module MetaSms
   # @author Shobhit Dixit
   class SmsLogging < ActiveRecord::Base
 
+    # Description of method
+    #
+    # @param [String] result of .send_sms method in provider class
+    # @param [Hash] options provided in ISmsProvider
+    # @param [Error] error raised by .send_sms method in provider class
+    # @author Shobhit Dixit
     def self.log_sms(result, options, error)
       if ActiveRecord::Base.connection.table_exists? self.table_name
         SmsLogging.create( SmsLogging.get_sms_logging_object(result, options, error) )
