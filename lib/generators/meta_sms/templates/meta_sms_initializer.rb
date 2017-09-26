@@ -8,11 +8,6 @@ MetaSms.configure do |config|
   # currently this gem supports only pg adapter for database
   config.logging = false
 
-  # if logging is set true, you can add a default resource type in the logging table
-  # it can be a user, or company etc.
-  # set a default resource type
-  # config.resource_type = 'User'
-
   # config.sms_box_user_name = ''
   # config.sms_box_key = ''
   # config.sms_route = 'Transactional'
