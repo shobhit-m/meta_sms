@@ -24,7 +24,7 @@ MetaSms.configure do |config|
   config.smsbox_key = ''
   config.route = ''
   config.from = ''
-  config.sms_type = 'TextSMS'
+  config.type = 'TextSMS'
 
 
 end
