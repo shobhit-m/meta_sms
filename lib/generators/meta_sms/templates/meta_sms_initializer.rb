@@ -8,11 +8,12 @@ MetaSms.configure do |config|
   # currently this gem supports only pg adapter for database
   config.logging = false
 
-  # config.sms_box_user_name = ''
-  # config.sms_box_key = ''
-  # config.sms_route = 'Transactional'
-  # config.sms_from = 'tpohub'
-  # config.sms_type = 'TextSMS'
+  # config.sms_provider_name = :smsbox
+  # config.smsbox_user_name = ''
+  # config.smsbox_key = ''
+  # config.route = 'Transactional'
+  # config.from = 'tpohub'
+  # config.type = 'TextSMS'
 
 
 end
