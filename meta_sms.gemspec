@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 5.0"
+  s.add_dependency "rails", "6.0.3"
   s.add_development_dependency "rspec-rails", '~> 3.5'
   s.add_development_dependency 'yard', '~>0.9.6'
   s.add_development_dependency 'rake', '~>12.0', '>=12.0.0' # Tasks manager
