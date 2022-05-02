@@ -20,7 +20,6 @@ module MetaSms
     # @return [Type] description of returned object
     # @author Shobhit Dixit
     def send_sms
-      p parsed_uri
       res = Net::HTTP.get parsed_uri
       case res
       when "Error : Authentication Failed. Please Try Again"
@@ -33,6 +32,8 @@ module MetaSms
 
     def parsed_uri
       URI.parse(URI.encode(api_url.strip))
+      # Comment the above line of code and uncomment the below line for ruby 3
+      # URI.parse(api_url.strip)
     end
 
     # This method will make an api url
@@ -43,7 +44,6 @@ module MetaSms
     # Added a patch for handling template_id
     # @author Shobhit Dixit
     def api_url
-      p @options
       template_id = @options[:metadata][:template_id].present? ? "&templateid=#{@options[:metadata][:template_id]}" : ""
       "#{SMSBOX_PUBLIC_API_URI}usr=#{smsbox_user_name}&key=#{smsbox_key}&smstype=#{MetaSms.config.type}&to=#{mobile_number}&msg=#{message_text}&rout=#{route}&from=#{from}#{template_id}"
     end
