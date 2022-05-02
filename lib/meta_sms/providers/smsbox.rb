@@ -21,6 +21,7 @@ module MetaSms
     # @author Shobhit Dixit
     def send_sms
       res = Net::HTTP.get parsed_uri
+      p res
       case res
       when "Error : Authentication Failed. Please Try Again"
         ProviderUtility.authentication_error
